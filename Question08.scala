@@ -1,29 +1,16 @@
 object Question08 {
-  def sumEach(lists:List[List[Int]]) :Int = {
-    if (lists.isEmpty) return 0
-    var a = 0
-    if (lists.head.isEmpty)  a = 0
-    else a = (lists.head).head
-    return a + sumEach(lists.tail)
-  }
 
-  def cutting(lists:List[List[Int]]) : List[List[Int]] = {
-    if (lists.isEmpty) return List()     //If using List(List()) --> the result will have 0 append in every solution
-    if ((lists.head).isEmpty) return cutting(lists.tail)  //or List(List()) ++ cutting(lists.tail)
-    else return List(lists.head.tail) ++ cutting(lists.tail)
-  }
-
-  def checkEmpty(lists:List[List[Int]]) : Boolean = {
-    if (lists.isEmpty) return true
-    if (!(lists.head.isEmpty)) return false
-    return checkEmpty(lists.tail)
+  def sumPair(l1:List[Int], l2:List[Int]) :List[Int] = {
+    if (l1.isEmpty) return l2
+    if (l2.isEmpty) return l1
+    return List(l1.head + l2.head) ++ sumPair(l1.tail, l2.tail)
   }
 
   def sumAll(lists:List[List[Int]]) :List[Int] = {
-    if (checkEmpty(lists)) return List()
-    var i = sumEach(lists)
-    var newList = cutting(lists)
-    return List(i) ++ sumAll(newList)
+    if (lists.isEmpty) return List()
+    if (lists.length == 1) return lists.head
+    var newList = sumPair(lists.head, lists.tail.head)
+    return sumAll(newList :: lists.tail.tail)
   }
 
   def main(args: Array[String]): Unit = {
