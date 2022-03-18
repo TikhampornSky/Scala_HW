@@ -18,5 +18,6 @@ object Question05 {
     println(palindrome(listNum1))
     println(palindrome(listNum2))
     println(palindrome(List("1", 2, 1)))
+    println(palindrome(List()))
   }
 }

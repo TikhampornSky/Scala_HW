@@ -15,6 +15,7 @@ object Question04 {
   }
 
   def mergesort(list: List[Int]):List[Int] ={
+    if (list.isEmpty) return List()
     return merge_sort(list, 0, list.length - 1)
   }
   def main(args: Array[String]): Unit = {

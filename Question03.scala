@@ -25,5 +25,6 @@ object Question03 {
     println(subList(List(), listNum2))
     println(subList(List(), List()))
     println(subList(List(0, 4, 5), List()))
+
   }
 }

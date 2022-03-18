@@ -22,6 +22,5 @@ object Question08 {
     println(sumAll(List(List(1,2,3,4),List(),List(4,5),List(1,2,3,4,5,6))))
     println(sumAll(List(List(3,4),List(1,2,3,4,5,6),List(1,2,3,4))))
     println(sumAll(List(List(1,2,3,4,5,6),List(1,2,3,4),List(1,2),List(0,0,0,0,0,0,0,0,9))))
-
   }
 }
